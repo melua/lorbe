@@ -1,0 +1,80 @@
+% style du document
+\documentclass{book}
+% réglage des marges
+\usepackage[papersize={12.5cm,17.7cm},margin=1.2cm,includehead,includefoot]{geometry}
+% encodage du texte
+\usepackage[utf8]{inputenc}
+% dictionnaire
+\usepackage[francais]{babel}
+% pour les poèmes
+\usepackage{verse}
+% pour les URLs
+\usepackage{hyperref}
+% pour la police d'écriture
+% run updmap to update the fonts map
+\usepackage{kpfonts}
+% pour l'image dans le titre
+\usepackage{titlepic}
+% pour les images
+\usepackage{graphicx}
+% pour modifier les chapitres
+\usepackage{titlesec}
+\titleformat{\chapter}[display]{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+\titlespacing*{\chapter}{0pt}{0pt}{40pt}
+% pour le filigrane
+%\usepackage{draftwatermark}
+% pour la profondeur du chiffrage
+\setcounter{secnumdepth}{0}
+% pour le comptage des poèmes
+\newcounter{compteur}
+\newcommand{\numero}{\Roman{compteur}.~}
+% pour les headers
+\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{\hfill #1 \hfill}}{}}
+\renewcommand{\sectionmark}[1]{\markright{\MakeUppercase{\hfill #1 \hfill}}{}}
+% pour les auteurs
+\newcommand{\attrib}[1]{\nopagebreak{\raggedleft\footnotesize #1\par}}
+
+
+\title{\Huge{\textsc{l'Orbe}}\\\small{\emph{recueil de poésie}}\\\small{\textsc{textes de 2003 à 2008}}
+}
+
+\author{\textsc{Kévin Guignard}}
+\titlepic{\includegraphics[width=0.4\textwidth]{picture.jpg}}
+\date{}
+\hypersetup{
+	pdftoolbar=false,
+	pdfmenubar=false,
+	pdffitwindow=true,
+	pdfborderstyle = {/S/U/W 1}
+}
+
+\begin{document}
+
+\maketitle
+~
+\vfill
+\begin{center}
+\footnotesize{\copyright~Kévin Guignard, 2013 et 2016.\\Tous droits réservés.}
+\end{center}
+
+\input{Introduction}
+\newpage
+\input{Ruines}
+\newpage
+\input{Amor}
+\newpage
+\input{Contemplations}
+\newpage
+\input{Siege}
+\newpage
+\input{Circa}
+\newpage
+\input{Revelations}
+
+\tableofcontents
+\vfill
+\begin{flushright}
+Ce manuscrit, produit avec \LaTeX,\\a été compilé le~\today.
+\end{flushright}
+
+\end{document}
